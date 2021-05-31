@@ -20,8 +20,7 @@ describe('Pets', ()  => {
 
   after(() => { 
     Pet.deleteMany({$or: [{name: 'Norman'}, {name: 'Spider'}] }).exec((err, pets) => {
-      console.log(pets)
-      pets.remove();
+      console.log(pets, `Deleted ${pets.n} documents`)
     }) 
   });
 
